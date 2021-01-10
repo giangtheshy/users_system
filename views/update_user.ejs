@@ -1,0 +1,28 @@
+<%- include('include/_header') %>
+  <main class="update-user">
+    <a href="/" class="btn">All Users</a>
+    <h3 class="title">Update User</h3>
+    <form method="PUT" class="update-user-form">
+      <div class="input-control">
+        <label for="name">Name :</label>
+        <input type="text" name="_id" id="_id" value='<%= user._id %>' hidden>
+        <input type="text" name="name" id="name" value='<%= user.name %>' required>
+      </div>
+      <div class="input-control">
+        <label for="email">Email :</label>
+        <input type="email" name="email" id="email" value='<%= user.email %>' required>
+      </div>
+      <div class="input-control">
+        <label>Gender :</label>
+        <input type="radio" name="gender" value="Male" <%=user.gender=='Male' ? 'checked' : '' %> >Male
+        <input type="radio" name="gender" value="Female" <%=user.gender==='Female' ?'checked':'' %>>Female
+      </div>
+      <div class="input-control">
+        <label>Status :</label>
+        <input type="radio" name="status" value="Active" <%=user.status==='Active' ?'checked':'' %>>Active
+        <input type="radio" name="status" value="Inactive" <%=user.status==='Inactive' ?'checked':'' %>>Inactive
+      </div>
+      <button type="submit" class="btn">Update User</button>
+    </form>
+  </main>
+  <%- include('include/_footer') %>

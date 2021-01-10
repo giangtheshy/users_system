@@ -1,0 +1,27 @@
+<%- include('include/_header') %>
+  <main class="add-user">
+    <a href="/" class="btn">All Users</a>
+    <h3 class="title">Add New User</h3>
+    <form action="/api/users" method="POST" class='add-user-form'>
+      <div class="input-control">
+        <label for="name">Name :</label>
+        <input type="text" name="name" id="name" required>
+      </div>
+      <div class="input-control">
+        <label for="email">Email :</label>
+        <input type="email" name="email" id="email" required>
+      </div>
+      <div class="input-control">
+        <label>Gender :</label>
+        <input type="radio" name="gender" value="Male">Male
+        <input type="radio" name="gender" value="Female">Female
+      </div>
+      <div class="input-control">
+        <label>Status :</label>
+        <input type="radio" name="status" value="Active">Active
+        <input type="radio" name="status" value="Inactive">Inactive
+      </div>
+      <button type="submit" class="btn">Create User</button>
+    </form>
+  </main>
+  <%- include('include/_footer') %>
